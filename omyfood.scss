@@ -166,25 +166,26 @@ figcaption {
 .heart{
    position: absolute;
    left: 90%;
-   z-index: 3;
-   &:hover{
-       animation: fullheart 0ms  both;
-   }
+       animation-name: fullheart;
+   
 
     
 }
 .fullHeart{
-    position: absolute;
     left: 90%;
+    position: absolute;
     color: purple;
-    z-index: 2;
-    overflow: hidden;
+    opacity: 0%;
+   
+    
+   
+    
 }
 @keyframes fullheart {
 	0% {
-		transform: translateX(-9999px);
+		opacity:0%;
 	}
 	100% {
-		transform: translateX(0);
+		opacity: 100%;
 	}
 }
