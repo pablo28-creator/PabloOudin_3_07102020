@@ -1,0 +1,13 @@
+{
+  "name": "omyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./omyfood.scss:./css/omyfood.css",
+    "prefix": "postcss ./omyfood.scss --use autoprefixer -d .//css/"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions"
+}
