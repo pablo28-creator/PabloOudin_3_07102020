@@ -1,14 +1,12 @@
 @import "./utils/variables";
 body {
-    max-width: 100%;
-}
-.logo{
-    width: 100px;
-    filter: invert(100%);
+    max-width: $maxWidth;
+    margin: 0;
+    
 }
 .logo-titre{
     width: 200px;
-    margin-left: 25%;
+    margin-left: $maxWidth+(-$smallWidth) ;   
 }
 .homepage-header
 {
@@ -26,7 +24,7 @@ body {
             color: black;
         }
     }
-    &__btnmenu {
+    & .btnmenu {
         color: $colour-primary;
         border-radius: 20px;
         background: linear-gradient(to right bottom, #f174da, #9d59dc);
@@ -50,16 +48,17 @@ li {
     list-style: none;
     border-radius: 18px;
     counter-increment: li;
-    & i:hover{
-        color: #9356dc;
-    }
-    &:hover{
+    
+    &:hover {
         background-color:#f5edff;
-
-
+        & i {
+        color: #9356dc;
+        }
     } 
 }
-
+h1 {
+    padding-left: 0.5em;
+}
 li::before {
     content: counter(li); color:white; 
     background-color: $colour-puce;
@@ -76,13 +75,10 @@ li::before {
 .homepage-restaurant {
     background-color: $colour-primary ;
     padding-bottom: 1em;
-    & h1 {
-        padding: 0.5em;
-    }
     & img{
         border-radius: 10% 10% 0 0;
-        max-width: 100%;
-        max-height: 100%;
+        max-width: $maxWidth;
+        max-height: $maxWidth;
     }
     & a {
         text-decoration: none;
@@ -111,22 +107,34 @@ li::before {
         color: white;
         text-decoration: none;
     }
+    & .logo{
+        width: 100px;
+        filter: invert(100%);
+        margin-left: -2.5em;
+    }
+    & p{
+        margin-top: -9px;
+    }
 }
 .menu-header figure{
     display: flex;
     flex-direction: row;
+    & a{
+        padding-top: 1em;
+    }
 }
 .photoRestaurant{
-        max-width: 100%;
-        max-height: 100%;
+        max-width: $maxWidth;
+        max-height: $maxWidth;
         position: relative;   
 } 
 .contain{
     position: absolute;
-    width: 98%;  
+    width: $maxWidth;  
 }
 .Menu-plat{
     background-color: $colour-primary ;
+    padding-left: 5px;
     margin-top: -3em;
     padding-top: 2em;
     border-radius: 45px 45px 0 0;
@@ -135,19 +143,79 @@ li::before {
         justify-content: space-between;
         font-size: 30px;
     }
-    & span{
-        border-bottom:solid 3px #99e2d0; 
+    & h3 {
+        padding-top: 2em;
     }
+    & span{
+        border-bottom:solid 3px #99e2d0;
+    } 
 }
-.plat {
+.plats {
     background-color: white;
     box-shadow: -4px 4px 6px #e7e7e7;
     border-radius: 15px;
     margin: 1em;
     padding-left: 1em;
+    padding-right: 2em;
+    position: relative;
+    overflow: hidden;
+    &:hover  .box {
+        animation: boxe 1s both;
+    }
+    &:hover  .valid{
+        transform: rotate(360deg);
+    }
+    &:hover  span {
+        transform: translateX(-($maxWidth+(251%)));
+    }
+    &:hover h4 {
+        width: $mediumWidth;
+    }
+    &:hover strong {
+        width: $mediumWidth;
+    }  
+    animation: plat 800ms both;
+    @for $i from 1t to 11 {
+        &#{$i} {
+            animation-delay: 200ms * $i;
+            }
+        }
+    & .box {
+        left: $maxWidth;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         width: 100px;
+         height: 80px;
+         background-color: #99e2d0;
+         color: white; 
+         position: absolute;
+        & .valid{
+           transition: transform 500ms 100ms ease-in-out;
+        }
+    }
+    & h4{
+        margin-bottom: -8px;
+        width: $maxWidth;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     & p{
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
+        & strong {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: normal;
+        }
+        & span{
+            border-bottom: none;
+            font-weight: bold;
+            transition: transform 750ms  ease-in-out ;
+        }
     }
 }
 .btn-order {
@@ -155,31 +223,37 @@ li::before {
     border-radius: 20px;
     background: linear-gradient(to right bottom,#f174da,#9d59dc) ;
     box-shadow: 5px 8px 16px $colour-primary;
+    font-weight: bold;
     padding: 1em 6em;
     margin: 2em;
-    margin-left: 30%;
+    margin-left: $maxWidth+(-$smallWidth) ;
     margin-bottom: 4em;
 }
 figcaption {
     position: relative;
 }
-.heart{
+.heart{ 
    position: absolute;
-   left: 90%;
-       animation-name: fullheart;
-   
-
-    
+   left: 90%; 
+    z-index: 1;
 }
 .fullHeart{
     left: 90%;
     position: absolute;
-    color: purple;
+    color: $colour-puce;
     opacity: 0%;
-   
-    
-   
-    
+    z-index: 2;
+    &:hover{
+        animation: fullheart 200ms both;
+    }
+}
+@keyframes boxe {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-($maxWidth+(1%)));
+    }
 }
 @keyframes fullheart {
 	0% {
@@ -188,4 +262,36 @@ figcaption {
 	100% {
 		opacity: 100%;
 	}
+}
+@keyframes plat {
+	0% {
+        opacity:0%;
+        transform: translateY(50px);
+    }
+   
+	100% {
+        opacity: 100%;
+        transform: translateY(-5px);
+    }
+}
+@media (min-width:600px) and (max-width: 1023px) {
+    .btn-order {
+        margin-left: $maxWidth+(-$mediumWidth) ;
+    }
+    .logo-titre{
+        margin-left: $maxWidth+(-$mediumWidth) ;
+    } 
+}
+@media (max-width: 599px) {
+    .btn-order {
+        margin-left: $maxWidth+(-$largeWidth) ;
+    }
+    .logo-titre{
+        margin-left: $maxWidth+(-$largeWidth) ;
+    } 
+}
+@media (min-width: 1200px) {
+    .homepage-restaurant__image figcaption{ 
+        padding-left: 5em;
+    }
 }

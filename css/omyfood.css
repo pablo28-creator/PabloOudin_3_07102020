@@ -1,15 +1,11 @@
 body {
   max-width: 100%;
-}
-
-.logo {
-  width: 100px;
-  filter: invert(100%);
+  margin: 0;
 }
 
 .logo-titre {
   width: 200px;
-  margin-left: 25%;
+  margin-left: 50%;
 }
 
 .homepage-header {
@@ -28,7 +24,7 @@ body {
   text-decoration: none;
   color: black;
 }
-.homepage-header__btnmenu {
+.homepage-header .btnmenu {
   color: #f6f6f6;
   border-radius: 20px;
   background: linear-gradient(to right bottom, #f174da, #9d59dc);
@@ -51,11 +47,15 @@ li {
   border-radius: 18px;
   counter-increment: li;
 }
-li i:hover {
-  color: #9356dc;
-}
 li:hover {
   background-color: #f5edff;
+}
+li:hover i {
+  color: #9356dc;
+}
+
+h1 {
+  padding-left: 0.5em;
 }
 
 li::before {
@@ -77,9 +77,6 @@ li::before {
 .homepage-restaurant {
   background-color: #f6f6f6;
   padding-bottom: 1em;
-}
-.homepage-restaurant h1 {
-  padding: 0.5em;
 }
 .homepage-restaurant img {
   border-radius: 10% 10% 0 0;
@@ -113,10 +110,21 @@ li::before {
   color: white;
   text-decoration: none;
 }
+.homepage-footer .logo {
+  width: 100px;
+  filter: invert(100%);
+  margin-left: -2.5em;
+}
+.homepage-footer p {
+  margin-top: -9px;
+}
 
 .menu-header figure {
   display: flex;
   flex-direction: row;
+}
+.menu-header figure a {
+  padding-top: 1em;
 }
 
 .photoRestaurant {
@@ -127,11 +135,12 @@ li::before {
 
 .contain {
   position: absolute;
-  width: 98%;
+  width: 100%;
 }
 
 .Menu-plat {
   background-color: #f6f6f6;
+  padding-left: 5px;
   margin-top: -3em;
   padding-top: 2em;
   border-radius: 45px 45px 0 0;
@@ -141,20 +150,105 @@ li::before {
   justify-content: space-between;
   font-size: 30px;
 }
+.Menu-plat h3 {
+  padding-top: 2em;
+}
 .Menu-plat span {
   border-bottom: solid 3px #99e2d0;
 }
 
-.plat {
+.plats {
   background-color: white;
   box-shadow: -4px 4px 6px #e7e7e7;
   border-radius: 15px;
   margin: 1em;
   padding-left: 1em;
+  padding-right: 2em;
+  position: relative;
+  overflow: hidden;
+  animation: plat 800ms both;
 }
-.plat p {
+.plats:hover .box {
+  animation: boxe 1s both;
+}
+.plats:hover .valid {
+  transform: rotate(360deg);
+}
+.plats:hover span {
+  transform: translateX(-351%);
+}
+.plats:hover h4 {
+  width: 60%;
+}
+.plats:hover strong {
+  width: 60%;
+}
+.plats1 {
+  animation-delay: 200ms;
+}
+.plats2 {
+  animation-delay: 400ms;
+}
+.plats3 {
+  animation-delay: 600ms;
+}
+.plats4 {
+  animation-delay: 800ms;
+}
+.plats5 {
+  animation-delay: 1000ms;
+}
+.plats6 {
+  animation-delay: 1200ms;
+}
+.plats7 {
+  animation-delay: 1400ms;
+}
+.plats8 {
+  animation-delay: 1600ms;
+}
+.plats9 {
+  animation-delay: 1800ms;
+}
+.plats10 {
+  animation-delay: 2000ms;
+}
+.plats .box {
+  left: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 80px;
+  background-color: #99e2d0;
+  color: white;
+  position: absolute;
+}
+.plats .box .valid {
+  transition: transform 500ms 100ms ease-in-out;
+}
+.plats h4 {
+  margin-bottom: -8px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.plats p {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
+}
+.plats p strong {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: normal;
+}
+.plats p span {
+  border-bottom: none;
+  font-weight: bold;
+  transition: transform 750ms ease-in-out;
 }
 
 .btn-order {
@@ -162,9 +256,10 @@ li::before {
   border-radius: 20px;
   background: linear-gradient(to right bottom, #f174da, #9d59dc);
   box-shadow: 5px 8px 16px #f6f6f6;
+  font-weight: bold;
   padding: 1em 6em;
   margin: 2em;
-  margin-left: 30%;
+  margin-left: 50%;
   margin-bottom: 4em;
 }
 
@@ -175,22 +270,67 @@ figcaption {
 .heart {
   position: absolute;
   left: 90%;
-  animation: fullheart;
+  z-index: 1;
 }
 
 .fullHeart {
   left: 90%;
   position: absolute;
-  color: purple;
+  color: #9356dc;
   opacity: 0%;
+  z-index: 2;
+}
+.fullHeart:hover {
+  animation: fullheart 200ms both;
 }
 
+@keyframes boxe {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-101%);
+  }
+}
 @keyframes fullheart {
   0% {
     opacity: 0%;
   }
   100% {
     opacity: 100%;
+  }
+}
+@keyframes plat {
+  0% {
+    opacity: 0%;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(-5px);
+  }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  .btn-order {
+    margin-left: 40%;
+  }
+
+  .logo-titre {
+    margin-left: 40%;
+  }
+}
+@media (max-width: 599px) {
+  .btn-order {
+    margin-left: 25%;
+  }
+
+  .logo-titre {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .homepage-restaurant__image figcaption {
+    padding-left: 5em;
   }
 }
 
