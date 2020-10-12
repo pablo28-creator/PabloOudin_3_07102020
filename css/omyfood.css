@@ -99,14 +99,20 @@ li::before {
   box-shadow: 2px 2px 3px #d4d4d4;
   background-color: white;
   border-radius: 10%;
-  padding-bottom: 1em;
+  padding-bottom: 0.5em;
 }
 .homepage-restaurant__image figcaption {
   padding-left: 2em;
 }
+.homepage-restaurant__image figcaption h2 {
+  font-size: 17px;
+  margin-bottom: 0;
+}
 .homepage-restaurant__image figcaption p {
   display: flex;
   justify-content: space-between;
+  font-size: 15px;
+  margin-top: 0;
 }
 
 .homepage-footer {
@@ -281,11 +287,13 @@ figcaption {
 
 .heart {
   position: absolute;
+  bottom: 0.5em;
   left: 90%;
   z-index: 1;
 }
 
 .fullHeart {
+  bottom: 0.5em;
   left: 90%;
   position: absolute;
   color: #9356dc;
@@ -333,8 +341,18 @@ figcaption {
   }
 }
 @media (min-width: 1200px) {
+  .homepage-restaurant__image {
+    margin: auto;
+    margin-bottom: 3em;
+    width: 75%;
+  }
   .homepage-restaurant__image figcaption {
-    padding-left: 5em;
+    padding-left: 7em;
+  }
+}
+@media (min-width: 1650px) {
+  .homepage-restaurant__image {
+    width: 60%;
   }
 }
 
