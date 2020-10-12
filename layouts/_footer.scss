@@ -1,0 +1,17 @@
+.homepage-footer {
+    color: white;
+    background-color: $colour-footer;
+    padding: 0.5em;
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+    & .logo{
+        width: 100px;
+        filter: invert(100%);
+        margin-left: -2.5em;
+    }
+    & p{
+        margin-top: -9px;
+    }
+}

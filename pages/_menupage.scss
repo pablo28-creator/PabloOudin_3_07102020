@@ -1,0 +1,97 @@
+.contain{
+    position: absolute;
+    width: $maxWidth;  
+}
+.Menu-plat{
+    background-color: $colour-primary ;
+    padding-left: 5px;
+    margin-top: -3em;
+    padding-top: 2em;
+    border-radius: 45px 45px 0 0;
+    & h1 {
+        display: flex;
+        justify-content: space-between;
+        font-size: 30px;
+    }
+    & h3 {
+        padding-top: 2em;
+    }
+    & span{
+        border-bottom:solid 3px #99e2d0;
+    }
+    & .heart {
+        bottom: auto;
+    } 
+    & .fullHeart {
+        bottom: auto;
+    }
+}
+.plats {
+    background-color: white;
+    box-shadow: -4px 4px 6px #e7e7e7;
+    border-radius: 15px;
+    margin: 1em;
+    padding-left: 1em;
+    padding-right: 2em;
+    position: relative;
+    overflow: hidden;
+    opacity: 1;
+    &:hover  .box {
+        animation: boxe 1s both;
+    }
+    &:hover  .valid{
+        transform: rotate(360deg);
+    }
+    &:hover  span {
+        transform: translateX(-($maxWidth+(251%)));
+    }
+    &:hover h4 {
+        width: $mediumWidth;
+    }
+    &:hover strong {
+        width: $mediumWidth;
+    }  
+    animation: plat 800ms both;
+    @for $i from 1t to 11 {
+        &#{$i} {
+            animation-delay: 200ms * $i;
+            }
+        }
+    & .box {
+        left: $maxWidth;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         width: 100px;
+         height: 80px;
+         background-color: #99e2d0;
+         color: white; 
+         position: absolute;
+        & .valid{
+           transition: transform 500ms 100ms ease-in-out;
+        }
+    }
+    & h4{
+        margin-bottom: -8px;
+        width: $maxWidth;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    & p{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        & strong {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: normal;
+        }
+        & span{
+            border-bottom: none;
+            font-weight: bold;
+            transition: transform 750ms  ease-in-out ;
+        }
+    }
+}

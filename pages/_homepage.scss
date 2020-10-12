@@ -1,0 +1,82 @@
+li {
+    box-shadow: 2px 2px 3px $colour-secondary;
+    background-color:$colour-primary ;
+    margin: 1em;
+    margin-left: 0;
+    padding: 1em;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 18px;
+    counter-increment: li;
+    
+    &:hover {
+        background-color:#f5edff;
+        & i {
+        color: #9356dc;
+        }
+    } 
+}
+li::before {
+    content: counter(li); color:white; 
+    background-color: $colour-puce;
+    border-radius: 50%;
+    padding: 0.5em;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    margin-left: -0.5em;
+    margin-right: 0.5em;
+}
+.homepage-menu i {
+    margin-right: 1em;
+}
+.homepage-restaurant {
+    background-color: $colour-primary ;
+    padding-bottom: 1em;
+    & img{
+        border-radius: 10% 10% 0 0;
+        max-width: $maxWidth;
+        max-height: $maxWidth;
+    }
+    & a {
+        text-decoration: none;
+        color: black;
+    }
+    &__image {
+        box-shadow: 2px 2px 3px$colour-secondary ;
+        background-color: white;
+        border-radius: 10%;
+        padding-bottom: 0.5em;
+        & figcaption {
+            padding-left: 2em;
+            position: relative;
+            & h2 {
+                font-size: 17px;
+                margin-bottom: 0;
+            }
+            & p{
+                display: flex;
+                justify-content:space-between;
+                font-size: 15px;
+                margin-top: 0;
+            }
+            
+        }  
+    }
+}
+.heart{ 
+    position: absolute;
+    bottom: 0.5em;
+    left: 90%; 
+     z-index: 1;
+ }
+ .fullHeart{
+     bottom: 0.5em;
+     left: 90%;
+     position: absolute;
+     color: $colour-puce;
+     opacity: 0;
+     z-index: 2;
+     &:hover{
+         animation: fullheart 200ms both;
+     }
+ }

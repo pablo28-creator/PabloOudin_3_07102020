@@ -1,0 +1,44 @@
+.homepage-header
+{
+    text-align: center;
+    box-shadow: 0 -2px 0 $colour-secondary;
+    width: $maxWidth;
+    background-color: $colour-primary;
+    padding-bottom: 3em;
+    &__position{
+        text-decoration: none;
+        background-color: $colour-grey;
+        padding: 1em;
+        & a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+    & p {
+        padding: 1em;
+        color: #616161;
+    }
+}       
+.image {
+    text-align: center;
+}
+.logoMainpage {
+    width: 200px;
+}
+.logo-titre{
+    margin-left: $maxWidth+(-$smallWidth) ;   
+    width: 200px;     
+}
+.menu-header figure{
+    display: flex;
+    flex-direction: row;
+    & a{
+        padding-top: 1em;
+    }
+}
+.photoRestaurant{
+    max-width: $maxWidth;
+    max-height: $maxWidth;
+    position: relative;   
+} 
+
