@@ -5,33 +5,8 @@
 @import "./layouts/footer";
 @import "./pages/homepage";
 @import "./pages/menupage";
-@keyframes boxe {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-($maxWidth+(1%)));
-    }
-}
-@keyframes fullheart {
-	0% {
-		opacity:0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-@keyframes plat {
-	0% {
-        opacity:0;
-        transform: translateY(50px);
-    }
-   
-	100% {
-        opacity: 1;
-        transform: translateY(-5px);
-    }
-}
+
+
 @media (min-width:600px) and (max-width: 1023px) {
     .logo-titre{
         margin-left: $maxWidth+(-$mediumWidth) ;
@@ -47,9 +22,6 @@
         margin: auto;
         margin-bottom: 3em;
         width: $largeWidth;
-        & figcaption{ 
-            padding-left: 7em;
-        }
     }
 }
 @media (min-width: 1650px) {

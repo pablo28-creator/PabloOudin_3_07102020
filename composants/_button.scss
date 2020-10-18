@@ -1,9 +1,12 @@
 .btnmenu {
     color: $colour-primary;
     border-radius: 20px;
+    border: none;
+    box-shadow: 0px 6px 4px $colour-shadow;
     background: linear-gradient(to right bottom, #f174da, #9d59dc);
-    box-shadow: 0 8px 16px $colour-primary;
-    padding: 1em 2em;   
+    padding: 1em 2em;
+    font-weight: bold;
+    outline: none;   
 }
 .containBtn {
     text-align: center;
@@ -11,10 +14,12 @@
 .btn-order {
     color: $colour-primary;
     border-radius: 20px;
+    border: none;
     background: linear-gradient(to right bottom,#f174da,#9d59dc) ;
-    box-shadow: 5px 8px 16px $colour-primary;
+    box-shadow: 0px 6px 4px $colour-shadow;
     font-weight: bold;
     padding: 1em 6em;
     margin: 2em;
     margin-bottom: 4em;
+    outline: none;
 }

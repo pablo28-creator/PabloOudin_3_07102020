@@ -6,15 +6,21 @@
     background-color: $colour-primary ;
     padding-left: 5px;
     margin-top: -3em;
-    padding-top: 2em;
+    padding-top: 1em;
     border-radius: 45px 45px 0 0;
     & h1 {
+        font-family: 'Fredoka One', cursive;
+        font-style: italic;
+        padding-left: 0.5em;
         display: flex;
         justify-content: space-between;
         font-size: 30px;
+        
     }
     & h3 {
-        padding-top: 2em;
+        padding-top: 1.5em;
+        padding-left: 1em;
+        font-weight: normal;
     }
     & span{
         border-bottom:solid 3px #99e2d0;
@@ -46,10 +52,10 @@
         transform: translateX(-($maxWidth+(251%)));
     }
     &:hover h4 {
-        width: $mediumWidth;
+        width: $smallWidth;
     }
     &:hover strong {
-        width: $mediumWidth;
+        width: $smallWidth;
     }  
     animation: plat 800ms both;
     @for $i from 1t to 11 {
@@ -63,7 +69,7 @@
         align-items: center;
         justify-content: center;
          width: 100px;
-         height: 80px;
+         height: 100px;
          background-color: #99e2d0;
          color: white; 
          position: absolute;
@@ -93,5 +99,24 @@
             font-weight: bold;
             transition: transform 750ms  ease-in-out ;
         }
+    }
+}
+@keyframes plat {
+	0% {
+        opacity:0;
+        transform: translateY(50px);
+    }
+   
+	100% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+}
+@keyframes boxe {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-($maxWidth+(1%)));
     }
 }

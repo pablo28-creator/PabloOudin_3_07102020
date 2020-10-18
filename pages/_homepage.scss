@@ -1,14 +1,16 @@
 li {
-    box-shadow: 2px 2px 3px $colour-secondary;
+    box-shadow: 4px 4px 9px $colour-shadow;
     background-color:$colour-primary ;
     margin: 1em;
-    margin-left: 0;
+    margin-left: -1em;
     padding: 1em;
     padding-left: 0;
     list-style: none;
     border-radius: 18px;
     counter-increment: li;
-    
+    & i {
+        padding-left: 0.5em;
+    }
     &:hover {
         background-color:#f5edff;
         & i {
@@ -17,13 +19,14 @@ li {
     } 
 }
 li::before {
-    content: counter(li); color:white; 
-    background-color: $colour-puce;
+    content: counter(li); color:white;
+    font-size: 10px;
+    background-color: $colour-list;
     border-radius: 50%;
     padding: 0.5em;
     padding-left: 0.7em;
     padding-right: 0.7em;
-    margin-left: -0.5em;
+    margin-left: -0.7em;
     margin-right: 0.5em;
 }
 .homepage-menu i {
@@ -31,23 +34,44 @@ li::before {
 }
 .homepage-restaurant {
     background-color: $colour-primary ;
+    padding-top: 15px;
     padding-bottom: 1em;
     & img{
-        border-radius: 10% 10% 0 0;
+        border-radius: 5% 5% 0 0;
         max-width: $maxWidth;
-        max-height: $maxWidth;
+        max-height: 70%;
+    }
+    & .new {
+        width: 80px;
+        height: 30px;
+        background-color: #99e2d0;
+        position: absolute;
+        top: 5%;
+        left: 70%;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #2da285;
+        font-weight: bold;
+
     }
     & a {
         text-decoration: none;
         color: black;
     }
     &__image {
-        box-shadow: 2px 2px 3px$colour-secondary ;
+        position: relative;
+        z-index: 1;
+        height: 50%;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+        box-shadow: 4px 4px 9px $colour-shadow ;
         background-color: white;
-        border-radius: 10%;
-        padding-bottom: 0.5em;
+        border-radius: 5%;
+        padding-bottom: 3px;
         & figcaption {
-            padding-left: 2em;
+            padding-left: 1em;
             position: relative;
             & h2 {
                 font-size: 17px;
@@ -68,15 +92,23 @@ li::before {
     bottom: 0.5em;
     left: 90%; 
      z-index: 1;
- }
- .fullHeart{
-     bottom: 0.5em;
-     left: 90%;
-     position: absolute;
-     color: $colour-puce;
-     opacity: 0;
-     z-index: 2;
-     &:hover{
-         animation: fullheart 200ms both;
-     }
- }
+}
+.fullHeart{
+    bottom: 0.5em;
+    left: 90%;
+    position: absolute;
+    color: $colour-list;
+    opacity: 0;
+    z-index: 2;
+    &:hover{
+        animation: fullheart 200ms both;
+    }
+}
+@keyframes fullheart {
+	0% {
+		opacity:0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
