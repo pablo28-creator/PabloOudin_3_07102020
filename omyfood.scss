@@ -7,4 +7,13 @@
 @import "./pages/homepage";
 @import "./pages/menupage";
 
-
+@media (min-width:600px) and (max-width: 1023px) {
+    .logo-titre{
+        margin-left: $maxWidth+(-$mediumWidth) ;
+    } 
+}
+@media (min-width: 1201px) {
+    .logo-titre{
+        margin-left: $maxWidth+(-$smallWidth) ;
+    } 
+}
