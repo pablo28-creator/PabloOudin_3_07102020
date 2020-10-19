@@ -3,7 +3,7 @@
     border-radius: 20px;
     border: none;
     box-shadow: 0px 6px 4px $colour-shadow;
-    background: linear-gradient(to right bottom, #f174da, #9d59dc);
+    background: linear-gradient(to right bottom,$colour-btn1, $colour-btn2);
     padding: 1em 2em;
     font-weight: bold;
     outline: none;   
@@ -15,7 +15,7 @@
     color: $colour-primary;
     border-radius: 20px;
     border: none;
-    background: linear-gradient(to right bottom,#f174da,#9d59dc) ;
+    background: linear-gradient(to right bottom,$colour-btn1,$colour-btn2) ;
     box-shadow: 0px 6px 4px $colour-shadow;
     font-weight: bold;
     padding: 1em 6em;

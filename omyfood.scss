@@ -1,4 +1,5 @@
 @import "./utils/variables";
+@import "./utils/mediaqueries";
 @import "./base/base";
 @import "./composants/button";
 @import "./layouts/header";
@@ -7,25 +8,3 @@
 @import "./pages/menupage";
 
 
-@media (min-width:600px) and (max-width: 1023px) {
-    .logo-titre{
-        margin-left: $maxWidth+(-$mediumWidth) ;
-    } 
-}
-@media (max-width: 599px) {
-    .logo-titre{
-        margin-left: $maxWidth+(-$largeWidth) ;
-    } 
-}
-@media (min-width: 1200px) {
-    .homepage-restaurant__image{
-        margin: auto;
-        margin-bottom: 3em;
-        width: $largeWidth;
-    }
-}
-@media (min-width: 1650px) {
-    .homepage-restaurant__image{
-        width: $mediumWidth;
-    }
-}

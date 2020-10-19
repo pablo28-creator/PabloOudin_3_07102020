@@ -1,9 +1,9 @@
 .homepage-footer {
-    color: white;
+    color:$basic-colour;
     background-color: $colour-footer;
     padding: 0.5em;
     & a {
-        color: white;
+        color: $basic-colour;
         text-decoration: none;
     }
     & .logo{

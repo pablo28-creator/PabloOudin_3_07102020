@@ -12,14 +12,15 @@ li {
         padding-left: 0.5em;
     }
     &:hover {
+        color: $colour-list;
         background-color:#f5edff;
         & i {
-        color: #9356dc;
+        color: $colour-list;
         }
     } 
 }
 li::before {
-    content: counter(li); color:white;
+    content: counter(li); color:$basic-colour;
     font-size: 10px;
     background-color: $colour-list;
     border-radius: 50%;
@@ -67,7 +68,7 @@ li::before {
         margin-left: 1.5em;
         margin-right: 1.5em;
         box-shadow: 4px 4px 9px $colour-shadow ;
-        background-color: white;
+        background-color:$basic-colour;
         border-radius: 5%;
         padding-bottom: 3px;
         & figcaption {

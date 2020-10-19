@@ -7,7 +7,7 @@
     padding-bottom: 3em;
     &__position{
         text-decoration: none;
-        background-color: $colour-grey;
+        background-color: $colour-header;
         padding: 1em;
         & a {
             text-decoration: none;
@@ -27,7 +27,7 @@
     width: 200px;
 }
 .logo-titre{
-    margin-left: $maxWidth+(-$smallWidth) ;   
+    margin-left: $maxWidth+(-$largeWidth) ;   
     width: 200px;     
 }
 .menu-header figure{
