@@ -12,8 +12,8 @@
         margin-left: $maxWidth+(-$mediumWidth) ;
     } 
 }
-@media (min-width: 1201px) {
+@media (max-width: 599px) {
     .logo-titre{
-        margin-left: $maxWidth+(-$smallWidth) ;
+        margin-left: $maxWidth+(-$largeWidth) ;
     } 
 }

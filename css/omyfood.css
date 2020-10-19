@@ -111,7 +111,7 @@ h1 {
 }
 
 .logo-titre {
-  margin-left: 25%;
+  margin-left: 50%;
   width: 200px;
 }
 
@@ -519,9 +519,9 @@ li::before {
     margin-left: 40%;
   }
 }
-@media (min-width: 1201px) {
+@media (max-width: 599px) {
   .logo-titre {
-    margin-left: 50%;
+    margin-left: 25%;
   }
 }
 
