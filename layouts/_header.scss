@@ -5,6 +5,9 @@
     width: $maxWidth;
     background-color: $colour-primary;
     padding-bottom: 3em;
+    & i {
+        margin-right: 0.8em;
+    }
     &__position{
         text-decoration: none;
         background-color: $colour-header;
